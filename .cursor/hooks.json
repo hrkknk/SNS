@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "command": ".cursor/hooks/protect-drafts.py",
+        "matcher": "Write|StrReplace",
+        "failClosed": true
+      }
+    ]
+  }
+}

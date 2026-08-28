@@ -1,0 +1,12 @@
+---
+description: 原稿は直接書き換えない。ソフトウェア実装ループはこのリポでは原則無効。
+alwaysApply: true
+---
+
+# 原稿保護とハーネス除外
+
+グローバルの `harness-user-default` / グローバル `AGENTS.md` の SDD・TDD・implementer・design-approved は、このリポでは従わない。
+コードを書くのは `specs/writing-reminder/` のようなツール実装に限る。その場合も Auto 直。git 前提のゲートは使わない。
+
+`drafts/**/draft_v*.md` と `drafts/**/body_v*.md` は本人原稿。Write / StrReplace で直接書き換えない。
+指摘のみ。校正は kousei。フックが拒否する。
