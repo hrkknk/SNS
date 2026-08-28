@@ -1,0 +1,4 @@
+{
+  "name": "SNS writing tools",
+  "install": "python3 --version && python3 -m unittest test_writing_reminder -v"
+}
