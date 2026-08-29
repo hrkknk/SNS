@@ -13,7 +13,7 @@
 | 工程 | 担当 |
 |---|---|
 | 対話窓口、進行、ファイル受け渡し、Notion 反映、捏造チェック | Cursor Auto |
-| 1問1答のブレスト相手 | Cursor の GPT（Task / `gpt-5.6-sol-high`） |
+| 1問1答のブレスト相手 | Cursor の GPT（Task / `gpt-5.6-luna-high`） |
 | 下書き本文 | 同上 |
 | 校正・講評 | 同上（`kousei_prompt.md`） |
 | writing-reminder などのツール実装 | Auto 直 |
@@ -33,7 +33,7 @@ OpenAI の Codex CLI（`codex exec`）と API キーは使わない。文章は 
 Cursor の **Task** ツールで切る。親の会話モデルが GPT でも、本文・校正・次の1問は Task 側に渡す（窓口役が本文を混ぜないため）。
 
 - `subagent_type`: `generalPurpose`
-- `model`: `gpt-5.6-sol-high`
+- `model`: `gpt-5.6-luna-high`（Task の GPT は luna-high / sol-high / sol-xhigh 系のみ。terra と medium は無い）
 - 必要な原稿・ブリーフ・`kousei_prompt.md` はプロンプトに本文ごと渡す
 - 返ってきた文章は要約・言い換えせず、そのまま本人に見せる
 - Task にも `draft_v*.md` / `body_v*.md` を書き換えさせない
@@ -50,7 +50,7 @@ Notion はプロジェクトのプラグイン（`.cursor/settings.json` の `no
 
 - Install Script は空でよい（codex を入れない）
 - Secrets は `NOTION_TOKEN`（任意で `BUFFER_ACCESS_TOKEN`）。Codex / OpenAI の API キーは不要
-- 文章作業は上と同じ Task（`gpt-5.6-sol-high`）
+- 文章作業は上と同じ Task（`gpt-5.6-luna-high`）
 - Mac の launchd 執筆リマインダーは Codex 前提のままなので、Cloud Agent では動かない
 
 ## 教訓・世界観

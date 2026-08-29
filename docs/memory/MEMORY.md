@@ -1,12 +1,12 @@
 # 教訓・世界観の索引
 
 Cursor は `~/.claude/projects/.../SNS/memory/` を読まない。原本はそこからこのディレクトリへ移した。
-運用の入口はリポ直下の `AGENTS.md`。文章まわりのモデルは **Cursor の GPT**（Task / `gpt-5.6-sol-high`）。親は Cursor Auto。OpenAI の Codex CLI は使わない。
+運用の入口はリポ直下の `AGENTS.md`。文章まわりのモデルは **Cursor の GPT**（Task / `gpt-5.6-luna-high`）。親は Cursor Auto。OpenAI の Codex CLI は使わない。
 
 ## 必ず読む
 
 - [本人の文章を勝手に書き換えない](feedback_never_rewrite_users_prose.md) — 校正で直すのは誤字と表記ミスだけ。書き口＝その人。読みにくい箇所は指摘に留める
-- [文章の校正・講評は GPT に委譲する](feedback_delegate_prose_work_to_gpt.md) — Cursor の GPT（Task / gpt-5.6-sol-high）に投げる。親は書かない
+- [文章の校正・講評は GPT に委譲する](feedback_delegate_prose_work_to_gpt.md) — Cursor の GPT（Task / gpt-5.6-luna-high）に投げる。親は書かない
 - [note下書きの作り方](project_note_drafting_workflow.md) — 1問1答ブレストで材料を引き出し、ブリーフ化して GPT に執筆委譲。親 Agent は下書きを書かない
 - [発信プロジェクトの外部サービスID](project_sns_infra_ids.md) — Notion各DBの data source id、Buffer組織id、トークンの読み方
 - [コーヒー事業→世界観発信への転換](project_coffee_worldview_pivot.md) — 本質はキリスト教信仰。EC/ブランド先行ではなく思想発信が起点。布教アカウント化は禁止

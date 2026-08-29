@@ -1,6 +1,6 @@
 ---
 name: note-draft
-description: note下書きを1問1答ブレストで材料出しし、ブリーフ化して Cursor の GPT（Task / gpt-5.6-sol-high）に執筆委譲する。親 Agent（Cursor）は記事本文を書かない。下書き作成・note記事・ブレスト開始時に使う。
+description: note下書きを1問1答ブレストで材料出しし、ブリーフ化して Cursor の GPT（Task / gpt-5.6-luna-high）に執筆委譲する。親 Agent（Cursor）は記事本文を書かない。下書き作成・note記事・ブレスト開始時に使う。
 ---
 
 # note下書き作成ワークフロー（note-draft）
@@ -14,7 +14,7 @@ OpenAI の Codex CLI は使わない。
 Cursor の Task ツール:
 
 - `subagent_type`: `generalPurpose`
-- `model`: `gpt-5.6-sol-high`
+- `model`: `gpt-5.6-luna-high`
 - 必要な `input.txt` / `brief.md` / 文体見本はプロンプトに本文ごと渡す
 - 返ってきた文章は要約・言い換えしない
 
