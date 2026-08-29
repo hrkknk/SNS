@@ -3,7 +3,7 @@
 ## 目的
 
 火・木・土の夜、書き出しの材料が Notion に用意されている状態を作る。
-材料を作るのは **Cursor の GPT**（Task / gpt-5.6-luna-high）。親 Agent は文章に関与しない。
+材料を作るのは **Cursor の GPT**（Task / gpt-5.6-sol-high）。親 Agent は文章に関与しない。
 このスクリプト自体は Codex CLI 経由で GPT を呼ぶ実装のままなので、OpenAI の API キー／`codex login` が無い環境では動かない。対話の執筆・校正は Cursor の Task を使う。
 
 現状は claude.ai の cloud routine（`trig_01HZrSE1UXJHVsdUDfncxNiq`、Opus 5）が担当しているが、

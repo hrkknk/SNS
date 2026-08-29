@@ -1,6 +1,6 @@
-# 校正プロンプト（Cursor の GPT / gpt-5.6-luna に渡す）
+# 校正プロンプト（Cursor の GPT / gpt-5.6-sol に渡す）
 
-使い方: 親 Agent は自分で校正せず、Cursor の Task（`generalPurpose` / `gpt-5.6-luna-high`）にこのファイルと原稿全文を渡す。OpenAI の Codex CLI は使わない。
+使い方: 親 Agent は自分で校正せず、Cursor の Task（`generalPurpose` / `gpt-5.6-sol-high`）にこのファイルと原稿全文を渡す。OpenAI の Codex CLI は使わない。
 
 ---
 

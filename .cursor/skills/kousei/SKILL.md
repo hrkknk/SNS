@@ -1,6 +1,6 @@
 ---
 name: kousei
-description: note原稿を Cursor の GPT（Task / gpt-5.6-luna-high）に渡して校正チェックする。誤字・表記のみ。文体・言い回し・断定の強さは変更しない。校正・kousei・講評の依頼で使う。
+description: note原稿を Cursor の GPT（Task / gpt-5.6-sol-high）に渡して校正チェックする。誤字・表記のみ。文体・言い回し・断定の強さは変更しない。校正・kousei・講評の依頼で使う。
 ---
 
 # 校正チェック（kousei）
@@ -14,7 +14,7 @@ description: note原稿を Cursor の GPT（Task / gpt-5.6-luna-high）に渡し
 2. `kousei_prompt.md` と原稿ファイルの本文を読み、Task に渡す。
 
    - `subagent_type`: `generalPurpose`
-   - `model`: `gpt-5.6-luna-high`
+   - `model`: `gpt-5.6-sol-high`
    - プロンプトに `kousei_prompt.md` の本文と原稿全文を含める
    - ファイルは編集しないこと、校正結果だけを返すことを明示する
 

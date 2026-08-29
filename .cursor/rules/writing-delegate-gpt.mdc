@@ -7,7 +7,7 @@ alwaysApply: true
 
 このリポの対話窓口は Cursor Auto。**本文・校正・講評・1問1答の質問発明は自分でしない。**
 
-担当は `.cursor/skills/note-draft` と `.cursor/skills/kousei`。呼び出しは Cursor の Task（`generalPurpose`、モデル `gpt-5.6-luna-high`）。OpenAI の Codex CLI は使わない。
+担当は `.cursor/skills/note-draft` と `.cursor/skills/kousei`。呼び出しは Cursor の Task（`generalPurpose`、モデル `gpt-5.6-sol-high`）。OpenAI の Codex CLI は使わない。
 
 フロー: ユーザーの返答を GPT に渡して次の1問 → `brief.md` → 執筆委譲 → `/kousei`。
 直してよいのは誤字・表記のみ。言い回し・断定・語尾は触らない。
