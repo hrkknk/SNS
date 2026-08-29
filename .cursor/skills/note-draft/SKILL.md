@@ -1,32 +1,29 @@
 ---
 name: note-draft
-description: note下書きを1問1答ブレストで材料出しし、ブリーフ化して gpt-5.6-terra（codex CLI）に執筆委譲する。親 Agent（Cursor）は記事本文を書かない。下書き作成・note記事・ブレスト開始時に使う。
+description: note下書きを1問1答ブレストで材料出しし、ブリーフ化して GPT 5.6 sol（Cursor の Task でモデル指定）に執筆委譲する。親 Agent（Cursor）は記事本文を書かない。下書き作成・note記事・ブレスト開始時に使う。
 ---
 
 # note下書き作成ワークフロー（note-draft）
 
 `drafts/02_dopamine/` の構成（input.txt → brief.md → gpt_draft_raw.txt → draft_v1〜）を踏襲する。
-**親 Agent（Cursor Auto）が記事本文を執筆してはいけない。** 執筆も次の1問も gpt-5.6-terra に委譲する。
+**親 Agent（Cursor Auto）が記事本文を執筆してはいけない。** 執筆も次の1問も GPT に委譲する。
 
-## Terra 呼び出し（共通）
+## GPT 呼び出し（共通）
 
-```bash
-codex exec --skip-git-repo-check --sandbox read-only \
-  -c approval_policy="never" -m gpt-5.6-terra \
-  -c model_reasoning_effort="medium" "..."
-```
+Cloud / Cursor Auto では **Task サブエージェントに GPT 5.6 sol をモデル指定**して渡す。
+`codex exec` や `OPENAI_API_KEY` で OpenAI を直叩きしない。Cursor 側の認証で呼ぶ。
 
-`--sandbox read-only` と `approval_policy="never"` は必須。長文は stdin で渡す。
+例外: ローカル Mac の `writing_reminder.py`（launchd）は別系統。こちらのスキルでは使わない。
 
 ## 手順
 
-1. **1問1答ブレスト**: Auto は質問を自分で作らない。これまでの `drafts/<topic>/input.txt`（と直前のユーザー返答）を Terra に渡し、**次の1問だけ**出させる。一度に複数問を並べない。ユーザーの回答はそのまま `input.txt` に蓄積する。
+1. **1問1答ブレスト**: Auto は質問を自分で作らない。これまでの `drafts/<topic>/input.txt`（と直前のユーザー返答）を GPT に渡し、**次の1問だけ**出させる。一度に複数問を並べない。ユーザーの回答はそのまま `input.txt` に蓄積する。
 2. **ブリーフ化**: 材料が揃ったら `drafts/<topic>/brief.md` を作る。本人の言葉をそのまま残す（要約して言い換えない）。最低限含めるもの:
    - この記事で言いたいこと（結論）
    - 想定読者
    - 使う具体例・エピソード
    - 構成の骨組み（見出し案）
-3. **執筆委譲**: ブリーフと文体見本を Terra に渡し、`gpt_draft_raw.txt` として保存する。Auto は本文を書かない。
+3. **執筆委譲**: ブリーフと文体見本を GPT に渡し、`gpt_draft_raw.txt` として保存する。Auto は本文を書かない。
 4. **校正**: `/kousei` スキルに渡す（本文の書き換えは行わない）。捏造チェック（本人が言っていない体験談）は Auto の担当。
 
 ## GPT への指示で毎回入れる要素

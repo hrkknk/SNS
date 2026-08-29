@@ -1,13 +1,7 @@
-# 校正プロンプト（gpt-5.6-sol / codex CLI に渡す）
+# 校正プロンプト（GPT 5.6 sol に渡す）
 
-使い方:
-
-```bash
-cat 原稿.txt | codex exec --skip-git-repo-check --sandbox read-only \
-  -c approval_policy="never" -m gpt-5.6-sol "$(cat ~/SNS/kousei_prompt.md)"
-```
-
-`--sandbox read-only` と `approval_policy="never"` を付けないと、承認待ちで固まる。
+使い方（Cloud / Cursor Auto）: Task に GPT 5.6 sol をモデル指定し、このプロンプトと原稿全文を渡す。
+`codex exec` や `OPENAI_API_KEY` で OpenAI を直叩きしない。
 
 ---
 
