@@ -1,13 +1,6 @@
-# 校正プロンプト（gpt-5.6-sol / codex CLI に渡す）
+# 校正プロンプト（Cursor の GPT / gpt-5.6-luna に渡す）
 
-使い方:
-
-```bash
-cat 原稿.txt | codex exec --skip-git-repo-check --sandbox read-only \
-  -c approval_policy="never" -m gpt-5.6-sol "$(cat ~/SNS/kousei_prompt.md)"
-```
-
-`--sandbox read-only` と `approval_policy="never"` を付けないと、承認待ちで固まる。
+使い方: 親 Agent は自分で校正せず、Cursor の Task（`generalPurpose` / `gpt-5.6-luna-high`）にこのファイルと原稿全文を渡す。OpenAI の Codex CLI は使わない。
 
 ---
 
@@ -33,4 +26,4 @@ cat 原稿.txt | codex exec --skip-git-repo-check --sandbox read-only \
 2. 【読みにくいと感じた箇所】本文は書き換えず、どこがどう読みにくいかの指摘だけ。修正文を書かないこと
 3. 【文章そのものへの感想】書き手が何を考えている人に見えるか、どこが良いか。忖度なしで
 
-原稿は stdin で渡します。
+原稿はプロンプト末尾に添付します。

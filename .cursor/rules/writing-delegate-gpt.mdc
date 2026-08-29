@@ -1,20 +1,14 @@
 ---
-description: 本文・校正・ブレストは Terra に委譲する。親 Agent は書かない。
+description: 本文・校正・ブレストは Cursor の GPT に委譲する。親 Agent は書かない。
 alwaysApply: true
 ---
 
-# 文章作業は gpt-5.6-terra に委譲する
+# 文章作業は Cursor の GPT に委譲する
 
 このリポの対話窓口は Cursor Auto。**本文・校正・講評・1問1答の質問発明は自分でしない。**
 
-担当は `.cursor/skills/note-draft` と `.cursor/skills/kousei`。呼び出しは:
+担当は `.cursor/skills/note-draft` と `.cursor/skills/kousei`。呼び出しは Cursor の Task（`generalPurpose`、モデル `gpt-5.6-luna-high`）。OpenAI の Codex CLI は使わない。
 
-```bash
-codex exec --skip-git-repo-check --sandbox read-only \
-  -c approval_policy="never" -m gpt-5.6-terra \
-  -c model_reasoning_effort="medium" "..."
-```
-
-フロー: ユーザーの返答を Terra に渡して次の1問 → `brief.md` → 執筆委譲 → `/kousei`。
+フロー: ユーザーの返答を GPT に渡して次の1問 → `brief.md` → 執筆委譲 → `/kousei`。
 直してよいのは誤字・表記のみ。言い回し・断定・語尾は触らない。
 詳細は `AGENTS.md` と `docs/memory/`。
