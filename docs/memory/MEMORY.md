@@ -10,7 +10,6 @@ Cursor は `~/.claude/projects/.../SNS/memory/` を読まない。原本はそ�
 - [note下書きの作り方](project_note_drafting_workflow.md) — 1問1答ブレストで材料を引き出し、ブリーフ化して Terra に執筆委譲。親 Agent は下書きを書かない
 - [発信プロジェクトの外部サービスID](project_sns_infra_ids.md) — Notion各DBの data source id、Buffer組織id、トークンの読み方
 - [コーヒー事業→世界観発信への転換](project_coffee_worldview_pivot.md) — 本質はキリスト教信仰。EC/ブランド先行ではなく思想発信が起点。布教アカウント化は禁止
-- [日記でネタ断片と文体を積む](project_journal_workflow.md) — 日付1ページ、確定後のみ作成、スマホ1入力欄＋3:00リマインド
 
 ## その他
 
