@@ -14,6 +14,7 @@ metadata:
 - 親ページ「発信管理」: `3b0e6b98-d34f-8164-8d92-f19948b14e80`
 - コンテンツDB data source: `fe59df72-de82-4c4a-add7-be01a0fc64cc`（noteの記事＋ネタ箱。ステータス: ネタ/執筆中/レビュー/公開予定/公開済み。他に カテゴリ / 公開予定日 / 公開URL / 参照URL / メモ）
 - SNS投稿DB data source: `711e5dac-ebee-490c-a042-ca9a57656b38`（ステータス: 下書き/承認済み/予約済み/投稿済み/却下。「元記事」でコンテンツDBにリレーション）
+- 日記DB: database `0bf755f4-eadf-4a0f-84e7-d67744d4ec82` / data source `9affd3bf-a3b7-474c-baf8-25c83ba3ef47`（日付1ページ。プロパティ: 名前 / 日付 / ネタ化済み。運用は [project_journal_workflow.md](project_journal_workflow.md)）
 
 **Buffer**
 - GraphQL API エンドポイント: `https://api.buffer.com`（POST、Bearer認証）
